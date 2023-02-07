@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <h1> User Login</h1>
+    </div>
+    <br>
+    <div >
+        <label>
+            User Name:
+            <input type="text" id="user">
+        </label>
+    </div>
+    <br>
+    <br>
+    <div >
+        <label>
+            Password:
+            <input type="text" id="pw">
+        </label>
+    </div>
+    <br>
+    <br>
+    <div>
+        <label>
+            <button type="button" onclick="Login()">Log In</button>
+            <button type="button" onclick="Cancel()">Cancel</button>       
+         </label>
+    </div>
+    <div >
+        <p id="feelback"></p>
+    </div>
+    <script type="text/javascript">
+        var usernames=["TienPM", "Haha", "Lol"];
+        var passwords=["12","34","56"];
+        function Login(){
+            var uname= document.getElementById("user").value;
+            var pws=document.getElementById("pw").value;
+            var sms="";
+            for (var i=0 ; i<usernames.length; i++){
+                if(uname==usernames[i])
+            {
+                sms="";
+                if(pws==passwords[i]){
+                    location.href="https://www.google.com.vn/";
+                }
+                else{
+                    sms="Invalid passwords";
+                }
+                }
+                else{
+                    sms="Invalid usernames";
+                }
+            }
+            document.getElementById("feelback").innerHTML=sms;
+            }
+            function Cancel(){
+                document.getElementById("user").value="";
+                document.getElementById("pw").value="";
+                document.getElementById("user").focus()="";
+            }
+    </script>
+</body>
+</html>
